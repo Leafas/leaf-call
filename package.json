@@ -1,0 +1,52 @@
+{
+  "name": "calendar-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Calendar App",
+  "description": "Calendar Desktop App",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.calendar.app",
+    "productName": "Calendar",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "logo.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "logo.ico",
+      "uninstallerIcon": "logo.ico"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "logo.png",
+      "logo.ico"
+    ],
+    "publish": {
+      "provider": "github",
+      "owner": "Leafas",
+      "repo": "leaf-call"
+    },
+    "forceCodeSigning": false
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  },
+  "devDependencies": {
+    "electron": "^41.1.0",
+    "electron-builder": "^26.8.1",
+    "javascript-obfuscator": "^5.4.1"
+  }
+}
