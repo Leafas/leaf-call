@@ -1,29 +1,31 @@
 {
-  "name": "calendar-app",
-  "version": "1.0.0",
+  "name": "leaf-calendar",
+  "version": "1.0.1",
   "main": "main.js",
-  "author": "Calendar App",
-  "description": "Calendar Desktop App",
+  "author": "Leafas",
+  "description": "Leaf Calendar",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win"
   },
   "build": {
-    "appId": "com.calendar.app",
-    "productName": "Calendar",
+    "appId": "com.leafas.leafcalendar",
+    "productName": "Leaf Calendar",
     "directories": {
       "output": "dist"
     },
     "win": {
       "target": "nsis",
       "icon": "logo.ico",
-      "signAndEditExecutable": false
+      "signAndEditExecutable": false,
+      "executableName": "Leaf Calendar"
     },
     "nsis": {
       "oneClick": true,
       "perMachine": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
+      "shortcutName": "Leaf Calendar",
       "installerIcon": "logo.ico",
       "uninstallerIcon": "logo.ico"
     },
